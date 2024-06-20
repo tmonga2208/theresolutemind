@@ -1,0 +1,18 @@
+footer{
+    font-family: "Lora";
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+@media screen and (max-width:768px) {
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+}
+.body-blur {
+    filter: blur(2px);
+}

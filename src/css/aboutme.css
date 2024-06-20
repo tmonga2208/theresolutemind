@@ -1,0 +1,13 @@
+.ab{
+    font-family: "Lora";
+    font-size: 30px;
+}
+.tt{
+     max-height:400px;
+     width:80vw;
+}
+@media screen and (max-width:768px) {
+    .tt{
+        max-height:fit-content;
+    }
+}

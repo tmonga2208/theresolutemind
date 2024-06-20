@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
+.x1{
+    font-family: "Lora";
+}
+.req{
+    font-family: "Lora";
+
+}
+.x1:after{
+    content: '';
+    margin: auto;
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: transparent;
+    /* transition: width 0.5s ease,background-color 0.5s ease; */
+    transition: all 0.5s ease;
+  }
+.x1:hover:after{
+    width: 100%;
+    background-color: gold;
+  }
+nav{
+  z-index: 100;
+}
