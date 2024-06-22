@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/services.css"
+import { Link } from "react-router-dom";
 
 function Services({ img, name, jobtitle, aboutme }) {
   return (
@@ -11,7 +12,7 @@ function Services({ img, name, jobtitle, aboutme }) {
       <div className="w-full sm:w-3/5 p-4">
         <h2 className="text-2xl font-bold text-gray-900">{name}</h2>
         <p className="mt-2 text-gray-700">{aboutme}</p>
-        <button className="bg-red-500 text-white p-2 my-5 rounded hover:shadow-lg">Learn More</button>
+        <Link to="/appointment"><button className="bg-red-500 text-white p-2 my-5 rounded hover:shadow-lg">Book Now</button></Link>
       </div>
     </div>
     </div>

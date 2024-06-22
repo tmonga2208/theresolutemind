@@ -4,17 +4,19 @@ const cardP = [
         title: "CBT Training for Performance Enhancement",
         img: img1,
         description: "CBT Training for Performance Enhancement is necessary because it helps individuals develop effective coping strategies, reduce negative thinking patterns, and enhance mental resilience.",
-        link:"/cbt"
+        link:"/link2"
     },
     {
         title: "Consultation and Training",
         img: img1,
-        description: "Consultation and training for team building are essential as they foster collaboration, improve communication, and build trust among team members."
+        description: "Consultation and training for team building are essential as they foster collaboration, improve communication, and build trust among team members.",
+        link:"/link2"
     },
     {
         title: "Counselling And Clinical Interventions",
         img: img1,
-        description: "Counseling and Clinical Interventions are essential for addressing mental health issues, providing emotional support, and fostering personal growth."
+        description: "Counseling and Clinical Interventions are essential for addressing mental health issues, providing emotional support, and fostering personal growth.",
+        link: "/link2"
     }
 ]
 

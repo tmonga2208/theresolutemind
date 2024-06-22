@@ -13,31 +13,31 @@ function Navbar() {
     }
 
     return (
-        <nav className="fixed w-full bg-black p-4">
+        <nav className="fixed w-full bg-white p-4">
     <div className="container mx-auto flex items-center justify-between">
         <div className="flex">
             <Link to="/" className="flex items-center">
                 <img src={img0} alt="Logo" className="h-12 mr-2" />
             </Link>
         </div>
-        <button className="md:hidden px-2 py-1 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden px-2 py-1 text-black" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
         <div className="hidden md:flex justify-center w-full">
     <div className="flex justify-between space-x-10"> 
-        <Link to="/link1" className="x1 font-bold text-white">
+        <Link to="/link1" className="x1 font-bold text-black">
             About Us
         </Link>
-        <Link to="/link2" className="x1 font-bold text-white">
+        <Link to="/link2" className="x1 font-bold text-black">
             Services
         </Link>
-        <Link to="/link3" className="x1 font-bold text-white">
-            Media
+        <Link to="/link3" className="x1 font-bold text-black">
+            Confidentiality
         </Link>
-        <Link to="/link4" className="x1 font-bold text-white">
+        <Link to="/link4" className="x1 font-bold text-black">
             Client Portal
         </Link>
-        <Link to="/link5" className="x1 font-bold text-white">
+        <Link to="/link5" className="x1 font-bold text-black">
             Contact Us
         </Link>
     </div>
@@ -50,19 +50,19 @@ function Navbar() {
     </div>
             {isMobileMenuOpen && (
                 <div className="md:hidden flex flex-col items-center">
-                    <Link to="/link1" className="x1 font-bold text-white p-2">
+                    <Link to="/link1" className="x1 font-bold text-black p-2">
                     About Us
                    </Link>
-                   <Link to="/link2" className="x1 font-bold text-white p-2">
+                   <Link to="/link2" className="x1 font-bold text-black p-2">
                        Services
                    </Link>
-                   <Link to="/link3" className="x1 font-bold text-white p-2">
-                       Media
+                   <Link to="/link3" className="x1 font-bold text-black p-2">
+                      Confidentiality
                    </Link>
-                   <Link to="/link4" className="x1 font-bold text-white p-2">
+                   <Link to="/link4" className="x1 font-bold text-black p-2">
                        Client Portal
                    </Link>
-                   <Link to="/link5" className="x1 font-bold text-white p-2">
+                   <Link to="/link5" className="x1 font-bold text-black p-2">
                        Contact Us
                    </Link>
                 </div>

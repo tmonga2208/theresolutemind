@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import '../css/navbar2.css';
 import { auth } from '../firee12';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged ,signOut } from 'firebase/auth';
+import { useNavigate } from "react-router-dom";
 
 const storage = getStorage();
 
@@ -10,12 +11,12 @@ function NavBar2() {
   const auth = getAuth();
   const [profilePicUrl, setProfilePicUrl] = useState('');
   const [isSidebarActive, setIsSidebarActive] = useState(false);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
-    // Listen for auth state changes
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, save to local storage
         localStorage.setItem('currentUser', JSON.stringify(user));
         const profilePicRef = ref(storage, `profileImages/${user.uid}.png`);
         getDownloadURL(profilePicRef)
@@ -26,7 +27,6 @@ function NavBar2() {
             console.error(error);
           });
       } else {
-        // No user is signed in, try to load from local storage
         const storedUser = localStorage.getItem('currentUser');
         if (storedUser) {
           const userObj = JSON.parse(storedUser);
@@ -45,6 +45,15 @@ function NavBar2() {
 
   const handleCk = () => {
     setIsSidebarActive(!isSidebarActive);
+  };
+
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+      localStorage.removeItem('currentUser');
+      navigate('/');
+    }).catch((error) => {
+      console.error("Logout Error:", error);
+    });
   };
 
   return (
@@ -67,7 +76,7 @@ function NavBar2() {
           <ul className="list-none p-4">
             <li className="p-2 cursor-pointer">Home</li>
             <li className="p-2 cursor-pointer">Messages</li>
-            <li className="p-2 cursor-pointer">Logout</li>
+            <li className="p-2 cursor-pointer" onClick={handleLogout}>Logout</li>
           </ul>
         </div>
       )}

@@ -14,9 +14,9 @@ function Footer(){
                 </div>
                 <div className="social justify-center items-center sm:mt-12">
                     <p className="p-3">Follow Us On:</p>
-                    <a href="https://www.linkedin.com" className="p-3">LinkedIn</a>
-                    <a href="https://www.twitter.com" className="p-3">Twitter</a>
-                    <a href="https://www.instagram.com" className="p-3">Instagram</a>
+                    <a href="https://www.linkedin.com/in/kriti-monga-6b769518b/" className="p-3">LinkedIn</a>
+                    {/* <a href="https://www.twitter.com" className="p-3">Twitter</a> */}
+                    <a href="https://www.instagram.com/the_resolutemind/" className="p-3">Instagram</a>
                 </div>
             </div>
             <div className="flex flex-col w-1/2 justify-center items-center">

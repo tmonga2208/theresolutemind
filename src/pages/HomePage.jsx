@@ -44,7 +44,7 @@ function Home1(){
                                 link = {cardP[0].link}
                             />
                         </div>
-                        <div className="x6 flex flex-col md:flex md:flex-row justify-center items-center">
+                        <div className="x6 flex flex-col md:flex md:flex-row">
                             <Card
                                 title = {cardP[1].title}
                                 img = {cardP[1].img}

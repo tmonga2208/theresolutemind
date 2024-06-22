@@ -9,6 +9,7 @@ import LoginPage from "./components/login";
 import ClientPageHome from "./pages/clientpageHome";
 import Appointment from "./components/appointment";
 import UserInfo from "./pages/profile";
+import Contact from "./pages/contact";
 
 
 function Route1(){
@@ -25,6 +26,7 @@ function Route1(){
             <Route path="/clientpage" element={<ClientPageHome/>}/>
             <Route path="/appointment" element={<Appointment/>}/>
             <Route path="/profile" element={<UserInfo/>}/>
+            <Route path="/link5" element={<Contact/>}/>
         </Routes>
       </BrowserRouter>
     )

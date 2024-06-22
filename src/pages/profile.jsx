@@ -14,6 +14,7 @@ function UserInfo() {
   const [editableDisplayName, setEditableDisplayName] = useState('');
   const [file, setFile] = useState(null);
 
+
   useEffect(() => {
     const unsubscribe = onIdTokenChanged(auth, async (currentUser) => {
       setUser(currentUser);
@@ -95,7 +96,7 @@ const updateDisplayName = () => {
       <label htmlFor="fileInput">
       <img className='w-40 h-40 rounded-full' src={profilePicUrl} alt="Profile" />
       </label>
-      <input  id="fileInput" type="file" onChange={handleFileChange} />
+      <input  id="fileInput" type="file" style={{display:'none'}} onChange={handleFileChange} />
       <p>Email: {user.email}</p>
      <input value={editableDisplayName} onChange={(e) => setEditableDisplayName(e.target.value)}/>
      <button onClick={updateDisplayName}>Save Changes</button>
