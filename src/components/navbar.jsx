@@ -31,9 +31,9 @@ function Navbar() {
         <Link to="/link2" className="x1 font-bold text-black">
             Services
         </Link>
-        <Link to="/link3" className="x1 font-bold text-black">
+        {/* <Link to="/link3" className="x1 font-bold text-black">
             Confidentiality
-        </Link>
+        </Link> */}
         <Link to="/link4" className="x1 font-bold text-black">
             Client Portal
         </Link>
@@ -56,9 +56,9 @@ function Navbar() {
                    <Link to="/link2" className="x1 font-bold text-black p-2">
                        Services
                    </Link>
-                   <Link to="/link3" className="x1 font-bold text-black p-2">
+                   {/* <Link to="/link3" className="x1 font-bold text-black p-2">
                       Confidentiality
-                   </Link>
+                   </Link> */}
                    <Link to="/link4" className="x1 font-bold text-black p-2">
                        Client Portal
                    </Link>

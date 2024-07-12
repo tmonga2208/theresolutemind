@@ -1,0 +1,34 @@
+.lowerbar{
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+  transition: 1000ms;
+  background-color: grey;
+}
+.bigvc:hover .lowerbar{
+  opacity: 1;
+}
+.x454{
+  background-color: gray;
+}
+.tm2{
+    transform: scaleX(-1);
+}
+  .video-container {
+    position: relative;
+  }
+
+  .local-video {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20%;
+    z-index: 10;
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+  .aabcc{
+    width: fit-content;
+    padding: 1px 5px;
+    margin: 2px;
+  }

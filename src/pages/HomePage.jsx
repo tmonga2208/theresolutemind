@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/navbar";
 import '../css/homepage.css';
-import v2 from "../img/v1.mp4"
+import v2 from "../img/sports.mp4"
 import Card from "../components/card";
 import cardP from "../components/cardP.js"
 import Footer from "../components/footer.jsx";
@@ -10,10 +10,10 @@ import { useNavigate } from "react-router-dom";
 function Home1(){
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/individuals")
+        navigate("/")
     }
     const handleClick2 = () => {
-        navigate("/individuals")
+        navigate("/")
     }
 
     return (
@@ -21,7 +21,7 @@ function Home1(){
             <div className="flex-grow">
                 <Navbar />
                     <div className="x2 w-full absolute top-20">
-                        <video title="1" className="x3" loop autoPlay muted webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                        <video className="x3"  loop autoPlay playsInline webkit-playsInline muted>
                             <source src={v2} type="video/mp4"/>
                             Your browser does not support the video tag.
                         </video>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAuth, onIdTokenChanged } from 'firebase/auth';
 import { doc, getDoc ,updateDoc } from 'firebase/firestore';
 import { db } from '../firee12'; 
+import "../css/profile.css"
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
 const storage = getStorage();
 
@@ -13,6 +14,7 @@ function UserInfo() {
   const [displayName, setDisplayName] = useState(''); 
   const [editableDisplayName, setEditableDisplayName] = useState('');
   const [file, setFile] = useState(null);
+
 
 
   useEffect(() => {
@@ -34,8 +36,8 @@ function UserInfo() {
         const docRef = doc(db, 'users', currentUser.uid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          setDisplayName(docSnap.data().displayName);
-          setEditableDisplayName(docSnap.data().displayName);
+          setDisplayName(docSnap.data().username);
+          setEditableDisplayName(docSnap.data().username);
         } else {
           console.log('No such document!');
         }
@@ -66,13 +68,14 @@ function UserInfo() {
     }
   };
 
+
 const updateDisplayName = () => {
   if (user && editableDisplayName !== undefined) {
     const userDoc = doc(db, 'users', user.uid);
     updateDoc(userDoc, {
-      displayName: editableDisplayName,
+      username: editableDisplayName,
     }).then(() => {
-      console.log('Display name updated successfully');
+      alert('Name updated successfully');
     }).catch((error) => {
       console.error('Error updating display name:', error);
     });
@@ -84,22 +87,23 @@ const updateDisplayName = () => {
   if (!user) {
     return <div>No user is currently logged in.</div>;
   }
-
   return (
     <div className='flex flex-col justify-center items-center'>
       <header className='w-full h-12 flex flex-row bg-black text-white'>
       <Link to ='/clientpage'><button className='h-full font-3xl'>Back</button></Link>
       <h1 className='h-full w-full flex justify-center items-center '>User Info</h1>
       </header>
-      <div>
-      <div className='w-60 m-20 flex flex-col justify-center items-center'>
+      <div className='border m-20 p-10 relative'>
+      <div className='w-60 m-10 flex flex-col justify-center items-center'>
       <label htmlFor="fileInput">
-      <img className='w-40 h-40 rounded-full' src={profilePicUrl} alt="Profile" />
+      <img className='w-60 h-60 rounded-full profimg' src={profilePicUrl} alt="Profile" />
       </label>
       <input  id="fileInput" type="file" style={{display:'none'}} onChange={handleFileChange} />
       <p>Email: {user.email}</p>
-     <input value={editableDisplayName} onChange={(e) => setEditableDisplayName(e.target.value)}/>
-     <button onClick={updateDisplayName}>Save Changes</button>
+      <p className='m-2'>Name:
+      <input className='p-1 border border-black border-2' value={editableDisplayName} onChange={(e) => setEditableDisplayName(e.target.value)}/>
+      </p>
+     <button className='absolute bottom-2 bg-black text-white p-2 rounded-full' onClick={updateDisplayName}>Save Changes</button>
       </div>
       </div>
     </div>
